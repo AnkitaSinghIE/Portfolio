@@ -1,54 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ankita Singh | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-    <header class="hero">
-        <h1>Ankita Singh</h1>
-        <p>Data Engineer & Tech Enthusiast</p>
-    </header>
+:root {
+    --primary: #003366;
+    --bg: #f4f7f6;
+    --card-bg: #ffffff;
+    --accent: #007bff;
+}
 
-    <main class="grid-container">
-        <div class="column">
-            <section class="card">
-                <h2><i class="fa fa-bullhorn"></i> Socials</h2>
-                <ul>
-                    <li><a href="https://github.com/AnkitaSinghIE">GitHub</a></li>
-                    <li><a href="https://linkedin.com/in/ankitasingh007/">LinkedIn</a></li>
-                </ul>
-            </section>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
 
-            <section class="card">
-                <h2><i class="fa fa-certificate"></i> Education</h2>
-                <h3>Vellore Institute of Technology</h3>
-                <p>B.Tech Computer Science and Engineering | CGPA: 9.18</p>
-            </section>
+.hero { text-align: center; margin-bottom: 40px; }
 
-            <section class="card">
-                <h2><i class="fa fa-check"></i> Skills</h2>
-                <div class="skills-grid">
-                    <span>Power BI</span><span>Python</span><span>SQL</span><span>Azure</span><span>Excel</span>
-                </div>
-            </section>
-        </div>
-        <div class="column">
-            <section class="card">
-                <h2><i class="fa fa-briefcase"></i> Experience</h2>
-                <h3>Assistant Data Engineer | PepsiCo</h3>
-                <p>Started as a Graduate Engineer Trainee, transitioned to Assistant Data Engineer.</p>
-            </section>
-            
-            <section class="card">
-                <h2><i class="fa fa-cubes"></i> Projects</h2>
-                <h3><a href="#">Orb Intelligence</a></h3>
-                <p>API Wrapper providing firmographic data for 45M+ companies using Power Platform.</p>
-            </section>
-        </div>
-    </main>
-</body>
-</html>
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
+
+.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+.skills-grid span { 
+    background: #eef2f7; padding: 5px 12px; border-radius: 5px; font-size: 0.9em; 
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
