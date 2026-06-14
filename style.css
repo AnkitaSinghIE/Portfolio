@@ -1,43 +1,76 @@
 :root {
-    --primary: #003366;
-    --bg: #f4f7f6;
-    --card-bg: #ffffff;
-    --accent: #007bff;
+    --bg-color: #f0f2f5;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --primary-blue: #0056b3;
+    --text-color: #333;
+    --accent-color: #007bff;
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
-    line-height: 1.6;
-    background-color: var(--bg);
-    color: #333;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+    color: var(--text-color);
     margin: 0;
-    padding: 20px;
+    padding: 40px 20px;
+    min-height: 100vh;
 }
 
-.hero { text-align: center; margin-bottom: 40px; }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px;
+/* Layout */
+main {
     max-width: 1000px;
-    margin: auto;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 }
 
-.card {
+/* Card Styling */
+.box {
     background: var(--card-bg);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-h2 { color: var(--primary); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
-
-.skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
-.skills-grid span { 
-    background: #eef2f7; padding: 5px 12px; border-radius: 5px; font-size: 0.9em; 
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
 }
 
-a { color: var(--accent); text-decoration: none; }
+/* Typography */
+h1 { color: var(--primary-blue); text-align: center; margin-bottom: 30px; }
+
+h2 {
+    color: var(--primary-blue);
+    font-size: 1.4em;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+}
+
+h3 { color: #444; margin: 15px 0 5px 0; }
+
+/* Lists and Links */
+ul { padding-left: 20px; }
+li { margin-bottom: 8px; }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
 a:hover { text-decoration: underline; }
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    body { padding: 10px; }
+    main { grid-template-columns: 1fr; }
+}
